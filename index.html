@@ -4,62 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido a Quinelas de la Fuente</title>
-    <!-- Se añade una tipografía más deportiva desde Google Fonts -->
+    <!-- Se añaden nuevas tipografías para un look más dinámico y moderno -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            /* Se cambia la fuente a 'Oswald' para un look más deportivo */
-            font-family: 'Oswald', sans-serif;
+            /* Se usa Roboto como fuente base por su legibilidad */
+            font-family: 'Roboto', sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #0d1117;
-            color: #c9d1d9;
+            padding: 20px;
+            color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             text-align: center;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Soccer_field_-_empty.svg/2048px-Soccer_field_-_empty.svg.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            /* Fondo con un degradado vibrante y temático */
+            background: linear-gradient(135deg, #1d976c, #2a7d53, #0b4f6c);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
         }
-        .overlay {
-            background-color: rgba(13, 17, 23, 0.9); /* Un poco más oscuro para resaltar el contenido */
+
+        /* Animación para el fondo degradado */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.95); /* Tarjeta blanca semi-transparente */
             padding: 30px 40px;
-            border-radius: 15px;
-            border: 1px solid #30363d;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
             max-width: 600px;
             width: 90%;
+            border-top: 5px solid #ffffff;
         }
-        /* Nuevo estilo para el logo de la Liga MX */
+
         .logo-liga {
-            width: 120px;
-            margin-bottom: 20px;
+            width: 100px; /* Tamaño ajustado para el nuevo diseño */
+            margin-bottom: 15px;
         }
+
         h1 {
-            font-size: 2.8em;
-            color: #fff;
-            margin-top: 0;
-            margin-bottom: 10px;
-            text-transform: uppercase; /* Convertimos a mayúsculas */
-            text-shadow: 0 0 15px rgba(46, 160, 67, 0.6);
+            /* 'Anton' para un título impactante y deportivo */
+            font-family: 'Anton', sans-serif;
+            font-size: 3.2em;
+            color: #0b4f6c; /* Azul oscuro del degradado */
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
+
         p {
-            font-family: 'Segoe UI', Roboto, sans-serif; /* Fuente más legible para párrafos */
-            font-size: 1.1em;
-            margin-bottom: 30px;
+            font-size: 1.15em;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #555;
         }
+
+        .instructions {
+            font-size: 1em;
+            font-weight: 700;
+            color: #1d976c; /* Verde del degradado */
+        }
+
         .boton {
-            display: flex; /* Cambiado para alinear el ícono y el texto */
+            display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px; /* Espacio entre el ícono y el texto */
             width: 100%;
-            padding: 15px 0;
+            padding: 18px 0;
             margin: 15px 0;
             font-size: 1.2em;
             font-weight: bold;
@@ -67,47 +85,42 @@
             color: #fff;
             text-decoration: none;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease-in-out;
             box-sizing: border-box;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
         }
+
         .boton:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            transform: translateY(-6px) scale(1.03); /* Efecto más pronunciado */
+            box-shadow: 0 12px 25px rgba(0,0,0,0.3);
         }
-        /* Estilo para el ícono del balón */
-        .boton svg {
-            width: 24px;
-            height: 24px;
-        }
-        #boton-pagos { background: linear-gradient(45deg, #005bea, #00c6fb); }
-        #boton-quiniela { background: linear-gradient(45deg, #1d976c, #93f9b9); }
-        #boton-resultados { background: linear-gradient(45deg, #f09819, #edde5d); display: block; } 
+
+        /* Paleta de colores renovada para los botones */
+        #boton-pagos { background: linear-gradient(45deg, #02aab0, #00cdac); }
+        #boton-quiniela { background: linear-gradient(45deg, #ff8008, #ffc837); }
+        #boton-resultados { background: linear-gradient(45deg, #5f2c82, #49a09d); }
     </style>
 </head>
 <body>
-    <div class="overlay">
-        <!-- Se añade el logo de la Liga MX -->
+    <div class="container">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Liga_MX_logo.svg/1200px-Liga_MX_logo.svg.png" alt="Logo Liga MX" class="logo-liga">
         <h1>Quinelas de la Fuente</h1>
         <p>¡La quiniela donde compites, te diviertes y ganas!</p>
-
-        <p>Paga, obten el codigo de acceso,envia tu quinela y cada 
-           jornada revisa tus resultados<p>
+        <p class="instructions">Paga, obtén el código de acceso, envía tu quiniela y cada jornada revisa tus resultados.</p>
 
         <a id="boton-pagos" class="boton" href="https://eduardowado.github.io/PAGOS-QUINELA-DE-LA-FUENTE-/">
             Pagar y Obtener Código
         </a>
-        
+
         <a id="boton-quiniela" class="boton" href="https://eduardowado.github.io/QUINELAS-DE-LA-FUENTE/">
             Llenar tu Quiniela
         </a>
-        
+
         <a id="boton-resultados" class="boton" href="https://eduardowado.github.io/Participantes-y-Resultados-/">
             Ver Participantes y Resultados
         </a>
     </div>
-
 </body>
 </html>
