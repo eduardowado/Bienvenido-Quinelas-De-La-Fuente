@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quinielas de la Fuente</title>
-    <!-- Fuentes Deportivas -->
+    <title>Quinielas de la Fuente | Oficial</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
-    <!-- Iconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,400;0,700;0,900;1,800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <!-- Tailwind CSS para diseño moderno -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -18,11 +14,11 @@
                 extend: {
                     colors: {
                         brand: {
-                            dark: '#0f172a', // Azul oscuro casi negro
-                            accent: '#10b981', // Verde neón apuestas
-                            secondary: '#3b82f6', // Azul brillante
-                            gold: '#f59e0b',   // Dorado para pagos
-                            card: '#1e293b' // Gris azulado para tarjetas
+                            dark: '#080c14', 
+                            card: '#131b2c', 
+                            accent: '#00e676', // Verde original
+                            gold: '#ffb300',   // Dorado original
+                            blue: '#2979ff'    // Azul original
                         }
                     },
                     fontFamily: {
@@ -34,162 +30,149 @@
         }
     </script>
     <style>
-        /* Efecto de brillo en botones */
-        .btn-glow:hover {
-            box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
-        }
-        .btn-glow-gold:hover {
-            box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
-        }
-        .btn-glow-blue:hover {
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-        }
-        /* Fondo con patrón sutil */
+        /* Fondo con profundidad */
         body {
-            background-color: #0f172a;
-            background-image: radial-gradient(#1e293b 1px, transparent 1px);
-            background-size: 30px 30px;
+            background-color: #080c14;
+            background-image: 
+                radial-gradient(circle at 50% -20%, #1e293b 0%, #080c14 80%);
+            background-attachment: fixed;
         }
-        /* Ajuste para el logo */
-        .logo-img {
-            height: 50px; 
+
+        /* LOGO NAVBAR */
+        .logo-nav {
+            height: 40px;
             width: auto;
             object-fit: contain;
         }
+
+        /* LOGO CUERPO (Grande) */
+        .logo-hero {
+            height: 160px; /* Tamaño destacado */
+            width: auto;
+            margin: 0 auto 1.5rem auto;
+            filter: drop-shadow(0 0 20px rgba(0, 230, 118, 0.4));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-15px) scale(1.05); }
+        }
+
+        /* Estilización de Botones */
+        .btn-main {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid rgba(255,255,255,0.05);
+        }
+        .btn-main:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        .btn-gold { background: linear-gradient(145deg, #ffd54f, #ffb300); shadow: 0 10px 20px rgba(255,179,0,0.3); }
+        .btn-green { background: linear-gradient(145deg, #69f0ae, #00e676); shadow: 0 15px 30px rgba(0,230,118,0.4); }
+        .btn-blue { background: linear-gradient(145deg, #448aff, #2979ff); shadow: 0 10px 20px rgba(41,121,255,0.3); }
+
+        .glass-nav {
+            background: rgba(8, 12, 20, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
     </style>
 </head>
-<body class="text-white font-sans antialiased min-h-screen flex flex-col">
+<body class="text-white font-sans antialiased min-h-screen">
 
-    <!-- NAV / HEADER (Barra Superior) -->
-    <nav class="w-full py-4 px-6 flex justify-between items-center bg-brand-card/90 backdrop-blur-md border-b border-gray-700 fixed top-0 z-50 shadow-lg">
+    <nav class="w-full py-3 px-6 flex justify-between items-center glass-nav fixed top-0 z-50">
         <div class="flex items-center gap-3">
-            <!-- LOGO -->
-            <img src="https://lh3.googleusercontent.com/d/1OPtA84CbyWo_XOxKevZ1zmS0BEYOdzUj" 
-                 alt="Logo Quinielas" 
-                 class="logo-img"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-            <i class="ph-fill ph-soccer-ball text-3xl text-brand-accent hidden"></i>
-            
-            <span class="font-display text-2xl tracking-wider text-white hidden sm:inline">DE LA FUENTE</span>
+            <img src="https://lh3.googleusercontent.com/d/1OPtA84CbyWo_XOxKevZ1zmS0BEYOdzUj" alt="Logo Nav" class="logo-nav">
+            <span class="font-display text-xl tracking-tighter text-white uppercase italic">De La Fuente</span>
         </div>
         
-        <!-- BOTÓN ADMINISTRADOR (Enlace Externo) -->
-        <a href="https://eduardowado.github.io/Panel-Administrador-quiniela/" target="_blank" class="text-xs font-bold text-gray-300 hover:text-white hover:bg-gray-700 transition flex items-center gap-2 border border-gray-600 rounded-lg px-4 py-2">
-            <i class="ph-bold ph-user-gear text-lg"></i> 
-            ADMINISTRADOR
+        <a href="https://eduardowado.github.io/Panel-Administrador-quiniela/" target="_blank" 
+           class="text-[10px] font-black tracking-widest border border-white/20 px-4 py-2 rounded-md hover:bg-white hover:text-black transition-all uppercase">
+            Administrador
         </a>
     </nav>
 
-    <!-- HERO SECTION (Principal) -->
-    <header class="mt-32 px-4 text-center container mx-auto max-w-6xl">
+    <header class="mt-44 px-4 text-center max-w-5xl mx-auto">
         
-        <!-- ETIQUETA SUPERIOR -->
-        <span class="inline-block py-2 px-4 rounded-full bg-brand-secondary/20 text-brand-secondary text-sm font-bold mb-6 border border-brand-secondary/50 animate-pulse tracking-widest">
-            QUINIELA TEMPORADA Y SEMANAL
-        </span>
+        <div class="relative inline-block">
+            <img src="https://lh3.googleusercontent.com/d/1OPtA84CbyWo_XOxKevZ1zmS0BEYOdzUj" alt="Logo Principal" class="logo-hero">
+            <div class="absolute inset-0 bg-brand-accent/20 blur-[60px] rounded-full -z-10"></div>
+        </div>
 
-        <h1 class="font-display text-5xl md:text-7xl uppercase leading-tight mb-6 text-white drop-shadow-lg">
+        <div class="mb-4">
+            <span class="bg-brand-card border border-brand-accent/40 text-brand-accent px-4 py-1 rounded-full text-[10px] font-black tracking-[0.3em] uppercase shadow-[0_0_15px_rgba(0,230,118,0.1)]">
+                Quinelas De La Fuente "Vive la Emocion de la liga mx"
+            </span>
+        </div>
+
+        <h1 class="font-display text-6xl md:text-8xl uppercase leading-[0.9] mb-8 italic tracking-tighter">
             Tu Pasión.<br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-secondary">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-white to-brand-blue">
                 Tu Pronóstico.
             </span>
         </h1>
         
-        <p class="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
-            Participa en la quiniela más emocionante. Elige entre ganar el premio semanal o convertirte en el campeón de la temporada.
+        <p class="text-slate-400 text-base md:text-lg mb-16 max-w-xl mx-auto font-medium leading-relaxed">
+            Bienvenido a la casa de las mejores quinielas. Demuestra tu nivel, compite y Gana premios en efectivo .
         </p>
         
-        <!-- BOTONES PRINCIPALES (3 Columnas) -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-28">
             
-            <!-- 1. BOTÓN PAGAR (Izquierda - Dorado) -->
-            <a href="https://eduardowado.github.io/PAGOS-QUINELA-DE-LA-FUENTE-/" class="group relative w-full bg-brand-gold hover:bg-yellow-500 text-brand-dark font-black text-lg py-6 px-6 rounded-2xl transition transform hover:-translate-y-1 hover:scale-105 flex flex-col items-center justify-center gap-2 shadow-xl btn-glow-gold">
-                <i class="ph-bold ph-credit-card text-4xl mb-1"></i>
-                <span>PAGAR INSCRIPCIÓN</span>
-                <span class="text-xs font-medium opacity-80 text-black">Temporada o Semanal</span>
+            <a href="https://eduardowado.github.io/PAGOS-QUINELA-DE-LA-FUENTE-/" 
+               class="btn-main btn-gold rounded-3xl p-6 flex flex-col items-center justify-center gap-3 text-brand-dark shadow-xl">
+                <i class="ph-fill ph-hand-coins text-5xl"></i>
+                <span class="font-black text-xl uppercase italic">Metodo y reglas para Pagos y Gpo Whatsapp</span>
             </a>
 
-            <!-- 2. BOTÓN LLENAR (Centro - Verde - Destacado) -->
-            <a href="https://eduardowado.github.io/TEMPORADA-COMPLETA/" class="group relative w-full bg-brand-accent hover:bg-emerald-400 text-brand-dark font-black text-xl py-8 px-6 rounded-2xl transition transform hover:-translate-y-1 hover:scale-105 flex flex-col items-center justify-center gap-2 shadow-2xl btn-glow border-4 border-brand-dark ring-4 ring-brand-accent z-10 md:-mt-4">
-                <i class="ph-fill ph-pencil-simple-line text-5xl mb-1"></i>
-                <span>ELIGE Y LLENA</span>
-                <span class="text-sm font-bold opacity-90 text-black">TU QUINIELA AQUÍ</span>
+            <a href="https://eduardowado.github.io/TEMPORADA-COMPLETA/" 
+               class="btn-main btn-green rounded-3xl p-10 flex flex-col items-center justify-center gap-3 text-brand-dark shadow-2xl md:-mt-4 md:-mb-4 z-10 border-4 border-brand-dark/20">
+                <i class="ph-fill ph-note-pencil text-6xl"></i>
+                <span class="font-black text-3xl uppercase italic leading-none">Tipos de juego y LLenado , Envio Quiniela</span>
             </a>
 
-            <!-- 3. BOTÓN RESULTADOS (Derecha - Azul) -->
-            <a href="https://eduardowado.github.io/QUINIELA-RESULTADOS/" class="group relative w-full bg-brand-secondary hover:bg-blue-400 text-white font-black text-lg py-6 px-6 rounded-2xl transition transform hover:-translate-y-1 hover:scale-105 flex flex-col items-center justify-center gap-2 shadow-xl btn-glow-blue">
-                <i class="ph-bold ph-trophy text-4xl mb-1"></i>
-                <span>RESULTADOS</span>
-                <span class="text-xs font-medium opacity-90 text-blue-100">Y Tablas Generales</span>
+            <a href="https://eduardowado.github.io/QUINIELA-RESULTADOS/" 
+               class="btn-main btn-blue rounded-3xl p-6 flex flex-col items-center justify-center gap-3 text-white shadow-xl">
+                <i class="ph-fill ph-chart-line-up text-5xl"></i>
+                <span class="font-black text-xl uppercase italic">Tablas y Resultados de los participantes</span>
             </a>
 
         </div>
     </header>
 
-    <!-- SECCIÓN DE VIDEOS (Tutoriales) -->
-    <section class="container mx-auto px-4 py-16 mb-12 bg-brand-card/30 rounded-3xl border border-gray-800">
-        <h2 class="font-display text-3xl md:text-4xl text-center mb-12 uppercase tracking-wide text-white">
-            <i class="ph-fill ph-youtube-logo text-red-600 mr-3"></i> Aprende a Jugar
+    <section class="container mx-auto px-4 py-16 mb-20 bg-brand-card/30 rounded-[3rem] border border-white/5">
+        <h2 class="font-display text-4xl text-center mb-16 uppercase italic tracking-tighter">
+            <i class="ph-fill ph-play-circle text-brand-accent mr-2"></i> Centro de Ayuda 
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <!-- VIDEO 1: Bienvenida y Costos -->
-            <div class="bg-brand-card rounded-2xl overflow-hidden border border-gray-700 card-hover transition duration-300 group">
-                <div class="aspect-video bg-black relative">
-                    <!-- ¡PEGA AQUÍ EL ID DE TU VIDEO 1! -->
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_1" title="Bienvenida y Costos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="group bg-brand-dark/50 p-4 rounded-2xl border border-white/5 hover:border-brand-accent/40 transition-all">
+                <div class="aspect-video bg-black rounded-xl overflow-hidden mb-4 shadow-lg">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <div class="p-6 border-t border-gray-700">
-                    <div class="flex items-center gap-3 mb-3 text-brand-accent">
-                        <div class="bg-brand-accent/20 p-2 rounded-lg"><i class="ph-bold ph-money text-xl"></i></div>
-                        <h3 class="font-bold text-lg uppercase tracking-wide">1. Costos y Reglas</h3>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed">Precios de Temporada ($500) y Semanal ($30). Fechas límite de pago y reglas importantes.</p>
-                </div>
+                <h3 class="font-black text-sm uppercase text-brand-accent tracking-widest">01. Metodo y reglas para Pagos y Gpo Whatsapp</h3>
             </div>
 
-            <!-- VIDEO 2: Cómo Llenar -->
-            <div class="bg-brand-card rounded-2xl overflow-hidden border border-gray-700 card-hover transition duration-300 group">
-                <div class="aspect-video bg-black relative">
-                    <!-- ¡PEGA AQUÍ EL ID DE TU VIDEO 2! -->
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_2" title="Cómo Llenar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="group bg-brand-dark/50 p-4 rounded-2xl border border-white/5 hover:border-brand-blue/40 transition-all">
+                <div class="aspect-video bg-black rounded-xl overflow-hidden mb-4 shadow-lg">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <div class="p-6 border-t border-gray-700">
-                    <div class="flex items-center gap-3 mb-3 text-brand-secondary">
-                        <div class="bg-brand-secondary/20 p-2 rounded-lg"><i class="ph-bold ph-pencil-simple text-xl"></i></div>
-                        <h3 class="font-bold text-lg uppercase tracking-wide">2. Cómo Llenar</h3>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed">Guía rápida para enviar tus pronósticos, elegir tu comodín y calcular los goles.</p>
-                </div>
+                <h3 class="font-black text-sm uppercase text-brand-blue tracking-widest">02. Tipos de juego y LLenado , Envio Quiniela</h3>
             </div>
 
-            <!-- VIDEO 3: Resultados -->
-            <div class="bg-brand-card rounded-2xl overflow-hidden border border-gray-700 card-hover transition duration-300 group">
-                <div class="aspect-video bg-black relative">
-                    <!-- ¡PEGA AQUÍ EL ID DE TU VIDEO 3! -->
-                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_3" title="Ver Resultados" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="group bg-brand-dark/50 p-4 rounded-2xl border border-white/5 hover:border-brand-gold/40 transition-all">
+                <div class="aspect-video bg-black rounded-xl overflow-hidden mb-4 shadow-lg">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <div class="p-6 border-t border-gray-700">
-                    <div class="flex items-center gap-3 mb-3 text-purple-400">
-                        <div class="bg-purple-500/20 p-2 rounded-lg"><i class="ph-bold ph-trophy text-xl"></i></div>
-                        <h3 class="font-bold text-lg uppercase tracking-wide">3. Ver Resultados</h3>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed">Aprende a leer la tabla de posiciones, consultar tus aciertos y revisar tus saldos.</p>
-                </div>
+                <h3 class="font-black text-sm uppercase text-brand-gold tracking-widest">03. Tablas y Resultados de los participantes</h3>
             </div>
-
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="mt-auto py-8 text-center text-gray-500 text-xs border-t border-gray-800 bg-brand-dark">
-        <p class="mb-2">© 2025 Quinielas de la Fuente. Todos los derechos reservados.</p>
-        <p class="text-brand-accent font-bold tracking-widest">¡JUEGA CON PASIÓN!</p>
+    <footer class="py-12 text-center border-t border-white/5 bg-black/20">
+        <img src="https://lh3.googleusercontent.com/d/1OPtA84CbyWo_XOxKevZ1zmS0BEYOdzUj" alt="Logo Footer" class="h-10 mx-auto mb-4 opacity-50">
+        <p class="text-slate-600 text-[9px] font-black tracking-[0.4em] uppercase">© 2026 Quinielas de la Fuente</p>
     </footer>
 
 </body>
