@@ -149,71 +149,139 @@
         <p class="text-slate-600 text-[9px] font-black tracking-[0.4em] uppercase">© 2026 Quinielas de la Fuente</p>
     </footer>
 
+  <!-- MODAL REGLAMENTO CORREGIDO -->
     <div id="modal-reglamento" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/95 backdrop-blur-md">
         <div class="bg-brand-card border border-white/10 w-full max-w-2xl max-h-[90vh] rounded-3xl p-6 md:p-8 shadow-2xl flex flex-col">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="font-display text-2xl md:text-3xl italic uppercase text-brand-accent">Reglamento Oficial 2026</h2>
-                <button onclick="cerrarReglamento()" class="text-slate-400 hover:text-white text-3xl"><i class="ph ph-x-circle"></i></button>
+                <button onclick="cerrarReglamento()" class="text-slate-400 hover:text-white text-3xl cursor-pointer"><i class="ph ph-x-circle"></i></button>
             </div>
             
             <div class="space-y-8 text-sm md:text-base text-slate-300 leading-relaxed overflow-y-auto pr-4 modal-scroll">
                 
+                <!-- SECCIÓN A: VETERANOS -->
                 <section class="border-l-4 border-brand-blue pl-4 bg-brand-blue/5 py-4 rounded-r-xl">
                     <h3 class="text-brand-blue font-black uppercase mb-4 flex items-center gap-2">
-                        <i class="ph-fill ph-star"></i> A) SECCIÓN PARA VETERANOS (LO NUEVO)
+                        <i class="ph-fill ph-star"></i> A) SECCIÓN PARA VETERANOS (NUEVAS REGLAS)
                     </h3>
                     <div class="space-y-4">
                         <div>
-                            <p class="text-white font-bold">1. BLOQUEO AUTOMÁTICO (Temporada):</p>
-                            <p class="text-xs md:text-sm mt-1">La fecha límite para liquidar el costo total es antes del inicio de la <b>JORNADA 8</b>. Si el sistema detecta adeudo, el código se bloqueará automáticamente. Se te recordará tu adeudo en el formulario durante las primeras 7 jornadas. Favor de solicitar al administrador la actualización de tu cuenta tras cada pago.</p>
+                            <p class="text-white font-bold">1. BLOQUEO AUTOMÁTICO (Modalidad Temporada):</p>
+                            <p class="text-xs md:text-sm mt-1">La fecha límite para liquidar el costo total de la temporada es antes del inicio de la <b>JORNADA 6</b>. Si el sistema detecta adeudo al llegar a dicha jornada, el código se bloqueará automáticamente y no sumará puntos. Tras cada abono, es obligación del participante solicitar al administrador la confirmación en foto de la actualización de su saldo.</p>
+                            <p class="text-brand-gold font-bold text-xs mt-1"> Esto se hace con la finalidad de que estén completos y listos los premios al final de la temporada.</p>
                         </div>
                         <div>
-                            <p class="text-white font-bold">2. Partidos Especiales (Adelantados o Pospuestos):</p>
-                            <p class="text-xs md:text-sm mt-1"><b>Adelantados:</b> Si un partido se juega antes de su jornada original, todos los participantes deben ingresar el marcador real ya conocido en el formulario cuando llegue esa jornada. El administrador calificará con <b>3 puntos (Marcador Exacto)</b> a todos por igual. <span class="text-brand-gold font-bold">PROHIBIDO usar adelantados como Comodín (★).</span></p>
+                            <p class="text-white font-bold">2. PARTIDOS ESPECIALES (Adelantados o Pospuestos):</p>
+                            <p class="text-xs md:text-sm mt-1">
+                                <b>• Adelantados:</b> Si un partido se juega antes de su Jornada original, todos los participantes deberán capturar el marcador REAL (ya conocido) cuando el formulario de esa jornada se active. El administrador calificará a todos con <b>3 puntos</b> por igual. <span class="text-brand-gold font-bold">PROHIBIDO usar un partido adelantado como Comodín (★)</span>; de hacerlo, el administrador lo moverá a otro partido al azar.<br>
+                                <b>• Pospuestos:</b> Si un partido se pospone para fechas futuras, los puntos quedarán "pendientes". En modalidad <i>Semanal</i>, el ganador se anunciará hasta que el partido se juegue. En modalidad <i>Temporada</i>, la tabla general se recalculará en la semana en que dicho partido se dispute.
+                            </p>
                         </div>
                         <div>
-                            <p class="text-white font-bold">3. DESEMPATES (Bolsa Compartida):</p>
-                            <ul class="text-xs md:text-sm mt-1 list-disc pl-5">
-                                <li><b>1er Lugar (2 personas):</b> Se suma premio de 1° y 2° y se divide entre dos.</li>
-                                <li><b>1er Lugar (3+ personas):</b> Se suman los 3 premios y se reparte el total.</li>
-                                <li><b>Semanal:</b> El premio se divide en partes iguales entre los puntajes más altos.</li>
+                            <p class="text-white font-bold">3. DESEMPATES EN TABLAS (Bolsa Compartida):</p>
+                            <ul class="text-xs md:text-sm mt-1 space-y-1 list-disc pl-5">
+                                <li><b>Empate en 1er Lugar (2 personas):</b> Se suma el premio del 1° + 2° lugar y se divide entre dos.</li>
+                                <li><b>Empate en 1er Lugar (3 o + personas):</b> Se suman los premios de 1°, 2° y 3° y se reparte el total en partes iguales.</li>
+                                <li><b>Empate en 2do Lugar (2 o + personas):</b> (Aplica solo si el 1er lugar ganó solo) Se suma el premio del 2° + 3° y se divide entre los empatados.</li>
+                                <li><b>Empate en 3er Lugar (2 o + personas):</b> El monto del 3er lugar se divide entre los empatados.</li>
+                                <li><b>Empate Semanal:</b> El pozo de la semana se divide en partes iguales entre los puntajes más altos.</li>
                             </ul>
                         </div>
                     </div>
                 </section>
 
+                <!-- SECCIÓN B: GUÍA NUEVOS -->
                 <section class="border-l-4 border-brand-accent pl-4 bg-brand-accent/5 py-4 rounded-r-xl">
                     <h3 class="text-brand-accent font-black uppercase mb-4 flex items-center gap-2">
-                        <i class="ph-fill ph-users-three"></i> B) GUÍA COMPLETA (PARA NUEVOS)
+                        <i class="ph-fill ph-users-three"></i> B) GUÍA COMPLETA (NUEVOS PARTICIPANTES)
                     </h3>
                     <div class="space-y-4">
                         <div>
-                            <p class="text-white font-bold italic">I. COSTOS Y PREMIOS</p>
-                            <p class="text-xs"><b>Semanal:</b> $30.00 MXN ($25 pozo / $3 admin).</p>
-                            <p class="text-xs"><b>Temporada:</b> $500.00 MXN ($450 pozo / $50 admin).</p>
+                            <p class="text-white font-bold italic">I. COSTOS Y BOLSA DE PREMIOS</p>
+                            <p class="text-xs"><b>• Semanal:</b> $30.00 MXN ($27 al pozo de ganadores / $3 gastos de administración).</p>
+                            <p class="text-xs mt-1"><b>• Temporada (17 Jornadas):</b> $500.00 MXN ($450 al pozo acumulado / $50 administración). La bolsa total se repartirá en: <b>1er Premio (60%)</b>, <b>2do Premio (30%)</b> y <b>3er Premio (10%)</b>. El monto final recaudado se comunicará vía WhatsApp después de la jornada de bloqueo.</p>
                         </div>
                         <div>
-                            <p class="text-white font-bold italic">II. CÓMO PARTICIPAR</p>
-                            <p class="text-xs">Realiza tu pago, envía comprobante por WhatsApp para recibir tu código y registrar tu nombre. El sistema descuenta 1 crédito automáticamente por cada envío.</p>
+                            <p class="text-white font-bold italic">II. CÓMO OBTENER TU CÓDIGO</p>
+                            <p class="text-xs">Envía por WhatsApp tu comprobante de pago indicando: <b>1) Tu Nombre de competidor</b> y <b>2) Una contraseña inventada de mínimo 5 dígitos</b> (obligatoria para revisar tus envíos). El sistema descontará 1 crédito de tu código por cada envío de jornada.</p>
                         </div>
+                        <!-- III. CÓMO JUGAR - COMPLETAMENTE REDISEÑADO -->
                         <div>
-                            <p class="text-white font-bold italic">III. SISTEMA DE PUNTOS</p>
-                            <div class="grid grid-cols-2 gap-2 mt-2 bg-black/40 p-3 rounded-lg text-[10px] md:text-xs">
-                                <div><b>Marcador Exacto:</b> 3 pts</div>
-                                <div><b>Resultado:</b> 1 pt</div>
-                                <div><b>Comodín (★):</b> Doble Puntos</div>
-                                <div><b>Bono Goles:</b> +3 pts extra</div>
+                            <p class="text-white font-bold italic mb-3">III. CÓMO JUGAR SEGÚN TU MODALIDAD</p>
+                            <div class="space-y-4 text-xs md:text-sm">
+                                
+                                <!-- TARJETA: TEMPORADA -->
+                                <div class="bg-black/40 p-4 rounded-xl border border-brand-accent/20">
+                                    <span class="text-brand-accent font-black uppercase flex items-center gap-2 mb-2 text-[11px] md:text-xs">
+                                        🏆 1. Modalidad Temporada
+                                    </span>
+                                    <ol class="list-decimal pl-4 space-y-1 text-slate-300">
+                                        <li>Selecciona la opción de <b>"Temporada"</b> en el formulario.</li>
+                                        <li>Elige la jornada activa y **espera a que cargue** por completo.</li>
+                                        <li>Introduce tu <b>Código de Acceso de Temporada</b> tal cual fue registrado.</li>
+                                        <li>Llena tus pronósticos detalladamente.</li>
+                                        <li><b>Recomendado:</b> Toma una captura de pantalla de tus resultados.</li>
+                                        <li>Presiona enviar, espera el <b>mensaje de éxito</b> ¡y listo! Ya estás participando por la bolsa final.</li>
+                                    </ol>
+                                </div>
+                                
+                                <!-- TARJETA: SEMANAL -->
+                                <div class="bg-black/40 p-4 rounded-xl border border-brand-blue/20">
+                                    <span class="text-brand-blue font-black uppercase flex items-center gap-2 mb-2 text-[11px] md:text-xs">
+                                        📆 2. Modalidad Semanal
+                                    </span>
+                                    <ol class="list-decimal pl-4 space-y-1 text-slate-300">
+                                        <li>Selecciona la opción de <b>"Semanal"</b> en el formulario.</li>
+                                        <li>Elige la jornada activa y **espera a que cargue** el sistema.</li>
+                                        <li>Introduce tu <b>Código Semanal</b> y escribe el <b>Nombre</b> con el que quieres aparecer en la tabla de esa semana.</li>
+                                        <li>Llena tus pronósticos detalladamente.</li>
+                                        <li><b>Recomendado:</b> Toma una captura de pantalla de tus resultados.</li>
+                                        <li>Presiona enviar y espera el <b>mensaje de éxito</b> para asegurar tu participación en el pozo de la semana.</li>
+                                    </ol>
+                                </div>
+
+                                <!-- TARJETA: AMBOS -->
+                                <div class="bg-black/40 p-4 rounded-xl border border-brand-gold/30 bg-gradient-to-r from-brand-gold/5 to-transparent">
+                                    <span class="text-brand-gold font-black uppercase flex items-center gap-2 mb-1 text-[11px] md:text-xs">
+                                        🔥 3. Modalidad Ambos (Doble Oportunidad)
+                                    </span>
+                                    <p class="text-[10px] md:text-xs text-slate-400 mb-2 italic">Ideal si eres jugador de Temporada pero quieres que tus mismos resultados sirvan para competir también por el dinero de la semana.</p>
+                                    <ol class="list-decimal pl-4 space-y-1 text-slate-300">
+                                        <li>Selecciona la opción para jugar <b>Ambos</b>.</li>
+                                        <li>Elige la jornada activa y **espera a que cargue** el formulario.</li>
+                                        <li>Ingresa obligatoriamente tus dos llaves: tu <b>Código de Temporada</b> Y tu <b>Código Semanal</b>.</li>
+                                        <li>Llena tus pronósticos **una sola vez** (el sistema duplicará la quiniela de forma automática).</li>
+                                        <li><b>Recomendado:</b> Toma una captura de pantalla antes de realizar el envío.</li>
+                                        <li>Presiona enviar, espera el <b>mensaje de éxito</b> y estarás jugando al mismo tiempo en las dos tablas de premios.</li>
+                                    </ol>
+                                </div>
+
                             </div>
                         </div>
                         <div>
-                            <p class="text-white font-bold italic">IV. REGLAS DE ORO</p>
-                            <p class="text-xs"><b>Fecha Límite:</b> Sin excepciones tras la hora indicada. <b>Captura:</b> Se recomienda tomar captura al ver el mensaje de éxito. <b>Identidad:</b> Para cobrar, confirma nombre y código de registro.</p>
+                            <p class="text-white font-bold italic">IV. SISTEMA DE PUNTUACIÓN</p>
+                            <div class="grid grid-cols-2 gap-2 mt-2 bg-black/40 p-3 rounded-lg text-[10px] md:text-xs">
+                                <div><b>Marcador Exacto:</b> 3 Puntos (Atinarle al marcador idéntico).</div>
+                                <div><b>Acertar Resultado:</b> 1 Punto (Si le atinas al gana/empata pero con otro marcador).</div>
+                                <div><b>Comodín (★):</b> Duplica los puntos del partido seleccionado.</div>
+                                <div><b>Bono Goles Totales:</b> +3 pts (Si aciertas al total de goles real de toda la Jornada).</div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-white font-bold italic">V. RECOMENDACIONES </p>
+                            <p class="text-xs">
+                                <b>• Llenado antes de fecha limite:</b> Cierre automático por el sistema según lo marque el formulario. No hay excepciones.<br>
+                                <b>• Captura de Seguridad:</b> Tu captura antes de enviar es tu único seguro de reclamo ante aclaraciones.<br>
+                                <b>• Tiempos De Partidos :</b> Valen los resultados pitados en cancha al min 90 + tiempo agregado. Decisiones posteriores de la Femexfut no alteran la quiniela.<br>
+                                <b>• Recordatorios :</b> Solo se recordara en el grupo de Whatsapp  de 1 a 3 veces por semana para que llenen los resultados <span class="text-brand-gold font-bold">No es obligacion del Administrador</span> traten de enviar sus marcadores 1 dia antes de la fecha limite para no dejar de hacer puntos,<span class="text-brand-gold font-bold">IMPORTANTE ENTRAR A EL GRUPO PARA VER AVISOS, GRACIAS POR TU COMPRENCION</span>.<br>
+                     
+                    
                         </div>
                     </div>
                 </section>
             </div>
 
-            <button onclick="cerrarReglamento()" class="w-full mt-6 bg-brand-accent/10 hover:bg-brand-accent/20 text-brand-accent font-bold py-4 rounded-2xl transition-all uppercase tracking-widest text-xs">
+            <button onclick="cerrarReglamento()" class="w-full mt-6 bg-brand-accent/10 hover:bg-brand-accent/20 text-brand-accent border border-brand-accent/30 font-bold py-4 rounded-2xl transition-all uppercase tracking-widest text-xs cursor-pointer">
                 Entendido, ¡A ganar!
             </button>
         </div>
